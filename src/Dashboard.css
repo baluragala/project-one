@@ -1,0 +1,247 @@
+.chart-container .one {
+  height: 20px;
+  transform: rotate(-90deg);
+  width: 200px;
+}
+
+.inner-bar {
+  width: 49%;
+  height: 20px;
+  background-color: #00ff01;
+}
+
+.chart-container {
+  padding-top: 150px;
+}
+
+body {
+  background-color: #000;
+}
+
+.container.chart-container {
+  display: block;
+  position: relative;
+}
+
+.progress-container {
+  width: 100px;
+  display: block;
+  position: relative;
+  min-height: 85px;
+  float: left;
+}
+
+.progress-bar-vertical {
+  width: 30px;
+  height: 80px;
+  margin: 0 auto;
+  float: left;
+  border: 2px solid #fff;
+  background-color: #00ff0100;
+  border-radius: 1px;
+  position: relative;
+}
+
+.progress-bar-vertical .progress-bar {
+  width: 100%;
+  height: 0;
+  border: 1px solid #fff;
+  -webkit-transition: height 0.6s ease;
+  -o-transition: height 0.6s ease;
+  transition: height 0.6s ease;
+  position: absolute;
+  bottom: 0;
+  background-color: #0f0;
+  height: 30%;
+}
+
+.top-content {
+  position: absolute;
+  top: -71px;
+  left: -10px;
+  color: #c5c5c5;
+  text-align: center;
+  min-height: 50px;
+}
+
+.left-content {
+  position: absolute;
+  color: #c5c5c5;
+  text-align: center;
+  right: 105px;
+  width: 58px;
+}
+
+.left-content .fuel {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.left-content .quantity {
+  font-size: 15px;
+  text-transform: uppercase;
+  line-height: 16px;
+}
+
+.left-content .percentage {
+  color: #9c9999;
+  font-size: 15px;
+}
+
+.level-number {
+  display: inline-block;
+  padding: 0px 5px;
+  min-width: 50px;
+  border: 2px solid #18a229;
+  border-radius: 2px;
+  margin-top: 6px;
+  font-size: 13px;
+  height: 22px;
+  line-height: 17px;
+}
+
+.left-part-content,
+.right-part-content {
+  padding-left: 35px;
+}
+
+.left-part-content::before,
+.right-part-content::before {
+  content: "";
+  height: 2px;
+  position: absolute;
+  width: 93%;
+  background-color: #18a229;
+  top: -90px;
+}
+
+.left-part-content::after,
+.right-part-content::after {
+  content: "";
+  height: 20px;
+  position: absolute;
+  width: 2px;
+  background-color: #18a229;
+  top: -89px;
+}
+
+.right-part-content::after {
+  right: 35px;
+}
+
+.left-part-content::after {
+  left: -50px;
+}
+
+.left-part-content::before {
+  left: -50px;
+}
+
+.right-part-content::before {
+  right: 35px;
+}
+
+.first-row.top-row-comntent::before {
+  content: " APU ";
+  position: absolute;
+  top: 48px;
+  font-size: 17px;
+  left: 45%;
+  color: #18a229;
+}
+
+.third-row.top-row-comntent::before {
+  content: " HYDRAULIC ";
+  position: absolute;
+  color: #18a229;
+  left: 43%;
+  top: -3px;
+}
+
+.third-row {
+  padding-top: 100px;
+  position: relative;
+}
+
+.right-mark1 {
+  position: absolute;
+  bottom: 23px;
+  height: 3px;
+  width: 12px;
+  background: white;
+}
+
+.second-row {
+  padding-top: 80px;
+  margin-bottom: 35px;
+}
+
+.third-row .left-part-content::before,
+.third-row .right-part-content::before {
+  width: 85% !important;
+}
+
+.right-mark2,
+.right-mark2 {
+  position: absolute;
+  bottom: 50px;
+  height: 3px;
+  width: 12px;
+  background: white;
+}
+
+.right-mark3 {
+  position: absolute;
+  bottom: 50px;
+  height: 3px;
+  width: 12px;
+  background: white;
+}
+
+.third-row .right-mark2 {
+  position: absolute;
+  top: 11px;
+  height: 3px;
+  width: 12px;
+  background: white;
+}
+
+.third-row .right-mark1 {
+  bottom: 15px;
+}
+
+.second-row .level-number {
+  margin-top: 30px;
+}
+
+.third-row .right-part-content .right-mark2 {
+  top: 20px;
+}
+
+.third-row .right-part-content .right-mark3 {
+  top: 56px;
+}
+
+.third-row .right-mark2 {
+  position: absolute;
+  height: 3px;
+  width: 12px;
+  background: white;
+}
+
+input.level-number {
+  display: inline-block;
+  width: 50px;
+  border: 2px solid #18a229;
+  border-radius: 2px;
+  margin-top: 6px;
+  font-size: 14px;
+  text-align: center;
+  background: transparent;
+  height: 22px;
+  box-shadow: none;
+  outline: none;
+  line-height: 22px;
+  color: #fff;
+  padding: 0;
+}
