@@ -305,3 +305,7 @@ input.level-number {
   color: #fff;
   padding: 0;
 }
+
+.third-row .right-part-content .quantity {
+  padding-top: 30px;
+}

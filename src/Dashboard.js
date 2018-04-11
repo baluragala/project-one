@@ -55,11 +55,21 @@ class Dashboard extends Component {
   }
 
   handleChange(e) {
-    console.log(e.target);
     this.setState({ [e.target.id]: e.target.value });
+    let { id: name, value } = e.target;
+
+    if (name.includes("pressureBar")) {
+      //console.log(Math.round(value / 40), value / 40);
+      value /= 40;
+    }
+
+    if (name.includes("fuelPercentBar") || name.includes("oilInTempBar")) {
+      value /= 5;
+    }
+
     this.state.socket.emit("change stat", {
-      name: e.target.id,
-      value: e.target.value
+      name,
+      value
     });
   }
 
@@ -73,8 +83,10 @@ class Dashboard extends Component {
                 <div className="number"> 1 </div>
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
                     id="fuelQtyBar1"
+                    min="0"
+                    max="100"
                     className="level-number"
                     value={this.state.fuelQtyBar1}
                     onChange={this.handleChange}
@@ -106,8 +118,10 @@ class Dashboard extends Component {
                 <div className="number"> 2 </div>
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
                     id="fuelQtyBar2"
+                    min="0"
+                    max="100"
                     className="level-number"
                     value={this.state.fuelQtyBar2}
                     onChange={this.handleChange}
@@ -134,7 +148,9 @@ class Dashboard extends Component {
                 <div className="number"> 3 </div>
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
+                    min="0"
+                    max="100"
                     id="fuelQtyBar3"
                     className="level-number"
                     value={this.state.fuelQtyBar3}
@@ -164,8 +180,10 @@ class Dashboard extends Component {
                 <div className="number"> 1 </div>
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
                     id="fuelPercentBar1"
+                    min="0"
+                    max="500"
                     className="level-number"
                     value={this.state.fuelPercentBar1 * 5}
                     onChange={this.handleChange}
@@ -198,8 +216,10 @@ class Dashboard extends Component {
                 <div className="number"> 2 </div>
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
                     id="fuelPercentBar2"
+                    min="0"
+                    max="500"
                     className="level-number"
                     value={this.state.fuelPercentBar2 * 5}
                     onChange={this.handleChange}
@@ -226,8 +246,10 @@ class Dashboard extends Component {
                 <div className="number"> 3 </div>
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
                     id="fuelPercentBar3"
+                    min="0"
+                    max="100"
                     className="level-number"
                     value={this.state.fuelPercentBar3 * 5}
                     onChange={this.handleChange}
@@ -258,8 +280,10 @@ class Dashboard extends Component {
               <div className="top-content">
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
                     id="h2oBar1"
+                    min="0"
+                    max="100"
                     className="level-number"
                     value={this.state.h2oBar1}
                     onChange={this.handleChange}
@@ -289,8 +313,10 @@ class Dashboard extends Component {
               <div className="top-content">
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
                     id="h2oBar2"
+                    min="0"
+                    max="100"
                     className="level-number"
                     value={this.state.h2oBar2}
                     onChange={this.handleChange}
@@ -315,7 +341,9 @@ class Dashboard extends Component {
               <div className="top-content">
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
+                    min="0"
+                    max="100"
                     id="h2oBar3"
                     className="level-number"
                     value={this.state.h2oBar3}
@@ -343,8 +371,10 @@ class Dashboard extends Component {
               <div className="top-content">
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
                     id="oilInTempBar1"
+                    min="0"
+                    max="500"
                     className="level-number"
                     value={this.state.oilInTempBar1 * 5}
                     onChange={this.handleChange}
@@ -377,7 +407,9 @@ class Dashboard extends Component {
               <div className="top-content">
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
+                    min="0"
+                    max="500"
                     id="oilInTempBar2"
                     className="level-number"
                     value={this.state.oilInTempBar2 * 5}
@@ -406,7 +438,9 @@ class Dashboard extends Component {
               <div className="top-content">
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
+                    min="0"
+                    max="500"
                     id="oilInTempBar3"
                     className="level-number"
                     value={this.state.oilInTempBar3 * 5}
@@ -441,7 +475,7 @@ class Dashboard extends Component {
                 <div className="number"> 1 </div>
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
                     id="quantityBar1"
                     className="level-number"
                     value={this.state.quantityBar1}
@@ -476,7 +510,7 @@ class Dashboard extends Component {
                 <div className="number"> 2 </div>
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
                     id="quantityBar2"
                     className="level-number"
                     value={this.state.quantityBar2}
@@ -506,7 +540,7 @@ class Dashboard extends Component {
                 <div className="number"> 3 </div>
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
                     id="quantityBar3"
                     className="level-number"
                     value={this.state.quantityBar3}
@@ -538,15 +572,17 @@ class Dashboard extends Component {
                 <div className="number"> 1 </div>
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
+                    min="0"
+                    max="4000"
                     id="pressureBar1"
                     className="level-number"
-                    value={this.state.pressureBar1}
+                    value={this.state.pressureBar1 * 40}
                     onChange={this.handleChange}
                   />
                 ) : (
                   <span className="level-number">
-                    {this.state.pressureBar1}
+                    {this.state.pressureBar1 * 40}
                   </span>
                 )}
               </div>
@@ -574,15 +610,17 @@ class Dashboard extends Component {
                 <div className="number"> 2 </div>
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
+                    min="0"
+                    max="4000"
                     id="pressureBar2"
                     className="level-number"
-                    value={this.state.pressureBar2}
+                    value={this.state.pressureBar2 * 40}
                     onChange={this.handleChange}
                   />
                 ) : (
                   <span className="level-number">
-                    {this.state.pressureBar2}
+                    {this.state.pressureBar2 * 40}
                   </span>
                 )}
               </div>
@@ -606,15 +644,17 @@ class Dashboard extends Component {
                 <div className="number"> 3 </div>
                 {this.state.editMode ? (
                   <input
-                    type="text"
+                    type="number"
+                    min="0"
+                    max="4000"
                     id="pressureBar3"
                     className="level-number"
-                    value={this.state.pressureBar3}
+                    value={this.state.pressureBar3 * 40}
                     onChange={this.handleChange}
                   />
                 ) : (
                   <span className="level-number">
-                    {this.state.pressureBar3}
+                    {this.state.pressureBar3 * 40}
                   </span>
                 )}
               </div>
