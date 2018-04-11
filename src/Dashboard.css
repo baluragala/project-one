@@ -24,7 +24,7 @@ body {
 }
 
 .progress-container {
-  width: 100px;
+  width: 90px;
   display: block;
   position: relative;
   min-height: 85px;
@@ -33,7 +33,7 @@ body {
 
 .progress-bar-vertical {
   width: 30px;
-  height: 80px;
+  height: 95px;
   margin: 0 auto;
   float: left;
   border: 2px solid #fff;
@@ -68,7 +68,7 @@ body {
   position: absolute;
   color: #c5c5c5;
   text-align: center;
-  right: 105px;
+  right: 95px;
   width: 58px;
 }
 
@@ -101,7 +101,9 @@ body {
 }
 
 .left-part-content,
-.right-part-content {
+.right-part-content,
+.left-side,
+.right-side {
   padding-left: 35px;
 }
 
@@ -227,6 +229,64 @@ body {
   height: 3px;
   width: 12px;
   background: white;
+}
+
+.right-text {
+  position: absolute;
+  bottom: 7px;
+  color: #fff;
+  right: 35px;
+}
+
+.bottom-header {
+  color: #269d9d;
+  text-align: center;
+  padding-top: 18px;
+  margin-bottom: 5px;
+  border-top: 2px solid #269d9d;
+  margin-top: 75px;
+  font-size: 18px;
+}
+
+.btn-outline-mark {
+  background: transparent;
+  border: 2px solid #269d9d;
+  color: #269d9d;
+  min-width: 95px;
+  min-height: 44px;
+  font-size: 16px;
+  border-bottom-color: transparent;
+  text-align: center;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+  margin: 0 1px;
+}
+
+.btn-outline-mark:focus {
+  outline: none;
+}
+
+.btn-outline-mark.active {
+  border: 2px solid #fff;
+  border-bottom-color: transparent;
+  color: #fff;
+}
+
+.bottom-buttons {
+  padding-right: 80px;
+}
+/*editor page specific*/
+.btn-submit {
+  background: transparent;
+  font-size: 13px;
+  border: 1px solid;
+  color: #fff;
+  font-weight: 700;
+  float: right;
+  padding: 8px 22px;
+  border-radius: 3px;
+  margin-top: 30px;
 }
 
 input.level-number {

@@ -253,7 +253,7 @@ class Dashboard extends Component {
         </div>
         {/* First row compleated */}
         <div className="row justify-content-center top-row-comntent second-row">
-          <div className="col-4">
+          <div className="col-4 left-side">
             <div className="progress-container">
               <div className="top-content">
                 {this.state.editMode ? (
@@ -338,7 +338,7 @@ class Dashboard extends Component {
               <span className="right-mark1" />
             </div>
           </div>
-          <div className="col-4">
+          <div className="col-4 left-side">
             <div className="progress-container">
               <div className="top-content">
                 {this.state.editMode ? (
@@ -567,6 +567,7 @@ class Dashboard extends Component {
               <span className="right-mark1" />
               <span className="right-mark2" />
               <span className="right-mark3" />
+              <span className="right-text"> L </span>
             </div>
             <div className="progress-container">
               <div className="top-content">
@@ -598,6 +599,7 @@ class Dashboard extends Component {
               <span className="right-mark1" />
               <span className="right-mark2" />
               <span className="right-mark3" />
+              <span className="right-text"> L </span>
             </div>
             <div className="progress-container">
               <div className="top-content">
@@ -629,10 +631,22 @@ class Dashboard extends Component {
               <span className="right-mark1" />
               <span className="right-mark2" />
               <span className="right-mark3" />
+              <span className="right-text"> L </span>
             </div>
           </div>
         </div>
         {/* third row compleated */}
+        <div className="row justify-content-center fourth-row pb-5">
+          <div className="col-8 justify-content-center text-center pl-0 bottom-buttons">
+            <h4 className="bottom-header"> SUBSYSTEM MENU </h4>
+            <button className="btn-outline-mark">UP</button>
+            <button className="btn-outline-mark">OMS</button>
+            <button className="btn-outline-mark active">APU</button>
+            <button className="btn-outline-mark">SPI</button>
+            <button className="btn-outline-mark">PORT SEL</button>
+            <button className="btn-outline-mark">MESSAGE ACK</button>
+          </div>
+        </div>
       </div>
     );
   }
